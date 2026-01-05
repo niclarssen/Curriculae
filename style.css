@@ -1,0 +1,133 @@
+*{
+box-sizing: border-box; 
+margin: 20; 
+padding: 05;
+}
+
+body { 
+font-family: 'Segoe UI', Tahoma, sans-serif; 
+background: #eef2f3; 
+color: #333; 
+margin: 30px;
+}
+
+.container { 
+display: flex; 
+min-height: 100vh; 
+}
+
+.editor { 
+width: 400px; 
+background: #fff; 
+padding: 25px; 
+height: 100vh; 
+overflow-y: auto; 
+box-shadow: 2px 0 10px rgba(0,0,0,0.1); 
+}
+
+.grupo { 
+margin-bottom: 25px; 
+border-bottom: 1px solid #eee; 
+padding-bottom: 15px; 
+}
+
+h1 { 
+color: #2c3e50; 
+margin-bottom: 10px; 
+}
+
+input, textarea { 
+width: 100%; 
+padding: 10px; 
+margin-top: 8px; 
+border: 1px solid #ddd; 
+border-radius: 5px; 
+}
+
+textarea { 
+height: 80px; 
+}
+
+.btn-add { 
+background: #3498db; 
+color: white; 
+border: none; 
+padding: 8px; 
+border-radius: 4px; 
+cursor: pointer; 
+width: 100%; 
+margin-top: 10px; 
+}
+
+.btn-pdf { 
+background: #27ae60; 
+color: white; 
+border: none; 
+padding: 15px; 
+border-radius: 8px; 
+cursor: pointer; 
+width: 100%; 
+font-size: 1.1em; 
+font-weight: bold; 
+margin-top: 20px; 
+}
+
+.preview-container { 
+flex: 1; 
+display: flex; 
+justify-content: center; 
+padding: 40px; 
+overflow-y: auto; 
+}
+
+.folha { 
+width: 210mm; 
+min-height: 297mm; 
+background: white; 
+padding: 50px; 
+box-shadow: 0 0 20px rgba(0,0,0,0.2); 
+}
+
+header { 
+border-bottom: 2px solid #2c3e50; 
+padding-bottom: 15px; 
+margin-bottom: 20px; 
+}
+
+header h1 { 
+font-size: 2.2em; 
+text-transform: uppercase; 
+margin: 0; 
+}
+
+header h2 { 
+font-size: 1.2em; 
+color: #7f8c8d; 
+font-weight: 400; 
+}
+
+.contato-info { 
+font-size: 0.9em; 
+margin-top: 10px; 
+color: #555; 
+}
+
+.preview-secao { 
+margin-bottom: 20px; 
+}
+
+.preview-secao h3 { 
+font-size: 1.1em; 
+border-bottom: 1px solid #ccc; 
+margin-bottom: 10px; 
+padding-bottom: 3px; 
+color: #2c3e50; 
+text-transform: uppercase; 
+}
+
+.hab-lista { 
+display: grid; 
+grid-template-columns: 1fr 1fr; 
+gap: 5px; 
+list-style-position: inside; 
+}

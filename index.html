@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculae | Gerador de Currículo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="editor no-print">
+            <h1>Curriculae</h1>
+            <p>Preencha os campos abaixo e veja o resultado ao lado.</p>
+
+            <section class="grupo">
+                <h3>Dados Pessoais</h3>
+                <input type="text" 
+                    id="in-nome" 
+                    oninput="atualizar()" 
+                    placeholder="Nome Completo">
+                <input type="text" 
+                    id="in-cargo" 
+                    oninput="atualizar()" 
+                    placeholder="Cargo Pretendido">
+                <input type="email" 
+                    id="in-email" 
+                    oninput="atualizar()" 
+                    placeholder="E-mail">
+                        <input type="text" id="in-tel" 
+                            oninput="mascaraTelefone(this); atualizar()" 
+                            placeholder="(00) 00000-0000" 
+                            maxlength="15">
+                <input type="text" id="in-tel" oninput="atualizar()" placeholder="Telefone">
+                <input type="text" id="in-cidade" oninput="atualizar()" placeholder="Cidade/Estado">
+            </section>
+
+            <section class="grupo">
+                <h3>Resumo Profissional</h3>
+                <textarea id="in-resumo" oninput="atualizar()" placeholder="Conte sua história profissional..."></textarea>
+            </section>
+
+            <section class="grupo">
+                <h3>Experiências</h3>
+                <div id="form-experiencias"></div>
+                <button onclick="addExp()" class="btn-add">+ Experiência</button>
+            </section>
+
+            <section class="grupo">
+                <h3>Formação</h3>
+                <div id="form-educacao"></div>
+                <button onclick="addEdu()" class="btn-add">+ Formação</button>
+            </section>
+
+            <section class="grupo">
+                <h3>Habilidades</h3>
+                <input type="text" id="in-hab" oninput="atualizar()" placeholder="Excel, Vendas, Inglês... (separe por vírgula)">
+            </section>
+
+            <button onclick="gerarPDF()" class="btn-pdf">Baixar Currículo em PDF</button>
+        </aside>
+
+        <main class="preview-container">
+            <div id="folha-curriculo" class="folha">
+                <header>
+                    <h1 id="out-nome">Seu Nome</h1>
+                    <h2 id="out-cargo">Seu Cargo</h2>
+                    <div id="out-contato" class="contato-info"></div>
+                </header>
+
+                <div id="secao-resumo" class="preview-secao">
+                    <h3 id="tit-resumo">Sobre Mim</h3>
+                    <p id="out-resumo"></p>
+                </div>
+
+                <div id="secao-exp" class="preview-secao">
+                    <h3 id="tit-exp">Experiência Profissional</h3>
+                    <div id="out-exp"></div>
+                </div>
+
+                <div id="secao-edu" class="preview-secao">
+                    <h3 id="tit-edu">Formação Acadêmica</h3>
+                    <div id="out-edu"></div>
+                </div>
+
+                <div id="secao-hab" class="preview-secao">
+                    <h3 id="tit-hab">Habilidades</h3>
+                    <ul id="out-hab" class="hab-lista"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
